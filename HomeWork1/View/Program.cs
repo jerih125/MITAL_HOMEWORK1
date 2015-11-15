@@ -21,45 +21,38 @@ namespace View
 
             var cat = new Cat(color, age);
 
-            Console.Write("Введите имя кошки: ");
-            cat.Name = Console.ReadLine();
-
-            Console.Write("Введите цвет здоровой кошки: ");
-            color.HealthyColor = Console.ReadLine();
-
-            Console.Write("Введите цвет больной кошки: ");
-            color.SickColor = Console.ReadLine();
-
-
-
             int i;
             do
             {
                 Console.WriteLine("\nТекущая информация о кошке: \nИмя: " + cat.Name + "\nВозраст: " + cat.Age + "\nТекущий цвет: " + cat.CurrentColor);
 
-                Console.Write("\n\nМеню: \n1) Изменить цвет здоровой кошки \n2) Изменить цвет больной кошки \n3) Наказать \n4) Покормить \n5) Выйти \n\nВаше решение: ");
+                Console.Write("\n\nМеню: \n1)Дать кошке имя \n2) Изменить цвет здоровой кошки \n3) Изменить цвет больной кошки \n4) Наказать \n5) Покормить \n6) Выйти \n\nВаше решение: ");
 
                 i = int.Parse(Console.ReadLine());
                 switch (i)
                 {
                     case 1:
+                        Console.Write("Введите имя кошки: ");
+                        cat.Name = Console.ReadLine();
+                        break;
+                    case 2:
                         Console.Write("Введите цвет здоровой кошки: ");
                         color.HealthyColor = Console.ReadLine();
                         break;
-                    case 2:
+                    case 3:
                         Console.Write("Введите цвет больной кошки: ");
                         color.SickColor = Console.ReadLine();
                         break;
-                    case 3:
+                    case 4:
                         cat.Punish();
                         break;
-                    case 4:
+                    case 5:
                         cat.Feed();
                         break;
-                    case 5:
+                    case 6:
                         break;
                 }
-            } while (i != 5);
+            } while (i != 6);
         }
     }
 }
